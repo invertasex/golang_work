@@ -4,12 +4,13 @@ import (
 	"log"
 	"net"
 
+	"grpc_s/github.com/your-repo/grpc-service/server"
+	"grpc_s/internal"
+
 	"github.com/jackc/pgx/v5/pgxpool"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
-
-	"github.com/invertasex/golang_work/grpc-service/internal"
-	"github.com/invertasex/golang_work/grpc-service/server" // Путь к сгенерированным protobuf файлам
+	// Путь к сгенерированным protobuf файлам
 )
 
 func main() {
