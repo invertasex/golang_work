@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package telegram;
+
+// Пакет Go, в который будут сгенерированы файлы (option go_package указывает на Go-модуль + пакет)
+option go_package = "github.com/your-repo/grpc-service/server;server";
+
+service TelegramService {
+  // Метод, который принимает параметры и возвращает результат проверки
+  rpc CheckUser(CheckUserRequest) returns (CheckUserResponse);
+}
+
+message CheckUserRequest {
+  string bot_token = 1;
+  string channel_link = 2;
+  int64 user_id = 3;
+}
+
+message CheckUserResponse {
+  bool is_in_group = 1;
+  string message = 2;
+}
